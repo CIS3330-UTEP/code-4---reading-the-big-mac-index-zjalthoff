@@ -4,14 +4,14 @@ big_mac_file = './big-mac-full-index.csv'
 
 def get_big_mac_price_by_year(year,country_code): #NEED TO SOLVE CASE SENSITIVITY ISSUE
     df = pd.read_csv('./big-mac-full-index.csv')
-    query1 = f"(date >= '{year}-01-01' and date <= '{year}-12-31' and iso_a3 == '{country_code}')"
+    query1 = f"(date >= '{year}-01-01' and date <= '{year}-12-31' and iso_a3 == '{country_code.upper()}')"
     query1_result = df.query(query1)
     mean_dollar_price2dec = round(query1_result['dollar_price'].mean(),2)
     return mean_dollar_price2dec
 
 def get_big_mac_price_by_country(country_code):
     df = pd.read_csv('big-mac-full-index.csv')
-    query2 = f"(iso_a3 == '{country_code}')"
+    query2 = f"(iso_a3 == '{country_code.upper()}')"
     query2_result = df.query(query2)
     mean_price_overall2dec = round(query2_result['dollar_price'].mean(),2)
     return mean_price_overall2dec

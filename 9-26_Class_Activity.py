@@ -27,7 +27,7 @@
 # print(df_result['dollar_price'].median())
 
 
-# DATE QUERY EXAMPLE BELOW (NOT RUNNING CORRECTLY)
+# DATE QUERY EXAMPLE BELOW (FIXED ERROR)
 
 
 import pandas as pd
